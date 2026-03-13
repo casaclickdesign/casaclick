@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CasaClick</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo-area">
+
+<img src="logo.png">
+
+<div>
+
+<h1>CasaClick</h1>
+<p>La tua casa in un click</p>
+
+</div>
+
+</div>
+
+<nav>
+
+<a href="#">Home</a>
+<a href="#">Compra</a>
+<a href="#">Affitta</a>
+<a href="#">Vendi</a>
+<a href="#">Immobili</a>
+<a href="#">Mappa</a>
+<a href="#">Preferiti</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h2>Trova la tua casa ideale</h2>
+
+<div class="search">
+
+<input id="citta" placeholder="Città">
+
+<select id="prezzo">
+
+<option value="">Prezzo max</option>
+<option value="100000">100000</option>
+<option value="200000">200000</option>
+<option value="300000">300000</option>
+
+</select>
+
+<button onclick="cerca()">Cerca</button>
+
+</div>
+
+</section>
+
+<section class="immobili">
+
+<h2>Immobili disponibili</h2>
+
+<div id="lista-immobili"></div>
+
+</section>
+
+<footer>
+
+<a href="#">Chi siamo</a>
+
+<a href="#">Contatti</a>
+
+<a href="#">Privacy</a>
+
+<a href="#">Cookie</a>
+
+<a href="#">Condizioni</a>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

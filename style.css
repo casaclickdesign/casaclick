@@ -81,7 +81,10 @@ padding:15px 30px;
 .top-header{
 display:flex;
 align-items:center;
-gap:18px;
+justify-content:center;
+gap:15px;
+text-align:left;
+margin-bottom:10px;
 }
 
 header{

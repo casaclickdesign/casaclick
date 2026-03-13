@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>CasaClick</title>
 
 <style>
@@ -15,35 +12,47 @@ margin:0;
 font-family:Arial, Helvetica, sans-serif;
 }
 
+/* HEADER */
+
 header{
 background:#2c5a82;
 color:white;
-padding:15px;
+padding:20px 0;
+text-align:center;
 }
 
-.top-header{
+/* BLOCCO LOGO + TITOLO */
+
+.logo-container{
 display:flex;
-align-items:center;
-gap:12px;
+justify-content:center;
+align-items:flex-start;
+gap:10px;
 }
 
-.logo{
-height:55px;
+.logo-container img{
+height:70px;
 }
 
-.title-area h1{
+.title-block{
+text-align:left;
+}
+
+.title-block h1{
 margin:0;
-font-size:30px;
+font-size:34px;
 }
 
-.title-area p{
+.title-block p{
 margin:0;
+margin-left:4px;
 font-size:14px;
 }
 
+/* MENU */
+
 nav{
-text-align:center;
-margin-top:10px;
+margin-top:15px;
 }
 
 nav a{
@@ -53,40 +62,68 @@ margin:0 15px;
 font-size:16px;
 }
 
+/* HERO */
+
 .hero{
 height:350px;
 background-image:url("https://images.unsplash.com/photo-1560518883-ce09059eeffa");
 background-size:cover;
 background-position:center;
 display:flex;
-align-items:center;
+flex-direction:column;
 justify-content:center;
+align-items:center;
 color:white;
-font-size:28px;
-font-weight:bold;
+text-align:center;
+}
+
+.hero h2{
+font-size:32px;
+margin-bottom:15px;
+}
+
+/* MOTORE RICERCA */
+
+.search-box{
+background:white;
+padding:10px;
+border-radius:5px;
+display:flex;
+gap:10px;
+}
+
+.search-box input,
+.search-box select{
+padding:6px;
+}
+
+.search-box button{
+background:#2c5a82;
+color:white;
+border:none;
+padding:6px 12px;
+cursor:pointer;
 }
 
 </style>
-
 </head>
 
 <body>
 
 <header>
 
-<div class="logo-area">
+<div class="logo-container">
 
-<img src="logo.png" style="height:65px; margin-right:10px;">
+<img src="logo.png">
 
-<div style="display:flex;flex-direction:column;">
-<h1 style="margin:0;">CasaClick</h1>
-<p style="margin:0; margin-left:5px;">La tua casa in un click</p>
+<div class="title-block">
+<h1>CasaClick</h1>
+<p>La tua casa in un click</p>
 </div>
 
 </div>
 
 <nav>
-
 <a href="#">Home</a>
 <a href="#">Compra</a>
 <a href="#">Affitta</a>
@@ -94,17 +131,27 @@ font-weight:bold;
 <a href="#">Immobili</a>
 <a href="#">Mappa</a>
 <a href="#">Preferiti</a>
-
 </nav>
 
 </header>
 
 <div class="hero">
-Trova la tua casa ideale
+
+<h2>Trova la tua casa ideale</h2>
+
+<div class="search-box">
+<input type="text" placeholder="Città">
+<select>
+<option>Prezzo max</option>
+<option>100.000€</option>
+<option>200.000€</option>
+<option>300.000€</option>
+<option>500.000€</option>
+</select>
+<button>Cerca</button>
+</div>
+
 </div>
 
 </body>
 </html>
-
-
-

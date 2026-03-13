@@ -84,8 +84,43 @@ align-items:center;
 gap:18px;
 }
 
+header{
+background:#2c5a82;
+color:white;
+padding:15px 30px;
+}
+
+.top-header{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
 .logo{
-height:120px;
+height:70px;
+width:auto;
+}
+
+.title-area h1{
+margin:0;
+font-size:32px;
+}
+
+.title-area p{
+margin:0;
+font-size:14px;
+}
+
+nav{
+margin-top:10px;
+text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-weight:500;
 }
 
 .title-area h1{

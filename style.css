@@ -245,20 +245,12 @@ transition:transform 0.2s ease;
 transform:scale(1.15);
 }
 
-/* Rimuove tutti gli sfondi bianchi */
-body{
+/* COLORE UNIFORME DI TUTTA LA PAGINA */
+html, body, main, section, .hero, .search, .contatti{
 background:#2c5a82 !important;
 }
 
-section{
-background:#2c5a82 !important;
-}
-
+/* testo contatti */
 .contatti{
-background:#2c5a82 !important;
 color:white;
-}
-
-.hero{
-background:#2c5a82;
 }

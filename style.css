@@ -1,7 +1,7 @@
 body{
 font-family:Arial;
 margin:0;
-background:#f5f5f5;
+background:#2c5a82;
 }
 
 header{
@@ -218,13 +218,14 @@ transition: transform 0.2s ease, box-shadow 0.2s ease;
 .contatti{
 padding:40px 20px;
 text-align:center;
-background:#f5f5f5;
+background:#2c5a82;
 }
 
-.contatti h2{
-font-size:28px;
-color:#2f5d84;
-margin-bottom:20px;
+.contatti{
+padding:40px 20px;
+text-align:center;
+background:#2c5a82;
+color:white;
 }
 
 .social-links{

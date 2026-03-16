@@ -152,6 +152,44 @@ cursor:pointer;
 </div>
 
 </div>
+<div id="cookie-banner">
 
+<p>
+Questo sito utilizza cookie tecnici per migliorare l'esperienza di navigazione.
+Puoi accettare o rifiutare l'utilizzo dei cookie.
+<a href="cookie.html">Cookie Policy</a>
+</p>
+
+<div class="cookie-buttons">
+
+<button onclick="acceptCookies()">Accetta</button>
+
+<button onclick="rejectCookies()" class="reject">
+Rifiuta
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function acceptCookies(){
+localStorage.setItem("cookieConsent","accepted");
+document.getElementById("cookie-banner").style.display="none";
+}
+
+function rejectCookies(){
+localStorage.setItem("cookieConsent","rejected");
+document.getElementById("cookie-banner").style.display="none";
+}
+
+window.onload = function(){
+if(localStorage.getItem("cookieConsent")){
+document.getElementById("cookie-banner").style.display="none";
+}
+}
+
+</script>
 </body>
 </html>

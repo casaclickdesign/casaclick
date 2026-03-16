@@ -244,3 +244,21 @@ transition:transform 0.2s ease;
 .social-icon img:hover{
 transform:scale(1.15);
 }
+
+/* Rimuove tutti gli sfondi bianchi */
+body{
+background:#2c5a82 !important;
+}
+
+section{
+background:#2c5a82 !important;
+}
+
+.contatti{
+background:#2c5a82 !important;
+color:white;
+}
+
+.hero{
+background:#2c5a82;
+}

@@ -199,3 +199,9 @@ font-weight:bold;
 background:#ccc;
 color:#333;
 }
+.whatsapp-float{
+position: fixed;
+bottom: 20px;
+right: 20px;
+z-index: 999;
+}

@@ -167,3 +167,35 @@ margin:0 15px;
 font-weight:500;
 font-size:16px;
 }
+/* COOKIE BANNER */
+
+#cookie-banner{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+background:#2c5a82;
+color:white;
+padding:15px;
+text-align:center;
+z-index:999;
+}
+
+.cookie-buttons{
+margin-top:10px;
+}
+
+#cookie-banner button{
+background:white;
+color:#2c5a82;
+border:none;
+padding:8px 14px;
+margin:5px;
+cursor:pointer;
+font-weight:bold;
+}
+
+#cookie-banner .reject{
+background:#ccc;
+color:#333;
+}

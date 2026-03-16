@@ -215,3 +215,27 @@ z-index: 999;
 transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 }
+.contatti{
+padding:40px;
+text-align:center;
+background:#f7f7f7;
+}
+
+.social-links{
+margin-top:20px;
+}
+
+.social-icon{
+display:inline-block;
+margin:10px;
+}
+
+.social-icon img{
+width:40px;
+height:40px;
+transition:transform 0.2s ease;
+}
+
+.social-icon img:hover{
+transform:scale(1.15);
+}

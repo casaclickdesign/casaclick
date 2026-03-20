@@ -487,7 +487,72 @@ document.getElementById("cookie-banner").style.display="none";
 </script>
 
 <section id="contatti" class="contatti">
+<section class="annunci-wrapper" id="annunci-disponibili">
+  <div class="annunci-header">
+    <div>
+      <h2>Immobili in evidenza</h2>
+      <p>Scopri subito alcune delle migliori opportunità disponibili: foto, prezzo, posizione e descrizioni che invitano ad approfondire ogni immobile.</p>
+    </div>
+    <button class="admin-toggle" id="adminToggle">Area inserimento annunci</button>
+  </div>
 
+  <div class="annunci-grid" id="annunciGrid"></div>
+
+  <div class="admin-panel" id="adminPanel">
+    <p class="admin-note">
+      Qui puoi aggiungere nuovi immobili senza scrivere codice HTML per ogni foto. I visitatori vedranno soltanto gli annunci; l'inserimento è riservato all'area amministratore.
+    </p>
+
+    <div class="field full">
+      <label for="adminPassword">Password amministratore</label>
+      <input type="password" id="adminPassword" placeholder="Inserisci la password admin" />
+    </div>
+
+    <form id="annuncioForm">
+      <div class="admin-grid">
+        <div class="field">
+          <label for="titolo">Titolo immobile</label>
+          <input type="text" id="titolo" placeholder="Es. Appartamento luminoso con terrazzo" required />
+        </div>
+
+        <div class="field">
+          <label for="prezzo">Prezzo</label>
+          <input type="text" id="prezzo" placeholder="Es. € 245.000" required />
+        </div>
+
+        <div class="field">
+          <label for="ubicazione">Ubicazione</label>
+          <input type="text" id="ubicazione" placeholder="Es. Vomero, Napoli" required />
+        </div>
+
+        <div class="field">
+          <label for="tagline">Parola ad effetto</label>
+          <select id="tagline"></select>
+        </div>
+
+        <div class="field full">
+          <label for="descrizioneTemplate">Variante descrizione pronta</label>
+          <select id="descrizioneTemplate"></select>
+        </div>
+
+        <div class="field full">
+          <label for="descrizione">Descrizione finale</label>
+          <textarea id="descrizione" placeholder="Descrizione persuasiva dell'immobile" required></textarea>
+        </div>
+
+        <div class="field full">
+          <label for="immagine">Foto principale immobile</label>
+          <input type="file" id="immagine" accept="image/*" required />
+        </div>
+      </div>
+
+      <div class="admin-actions">
+        <button type="submit" class="btn btn-primary">Aggiungi immobile</button>
+        <button type="button" class="btn btn-secondary" id="resetForm">Reset</button>
+      </div>
+    </form>
+  </div>
+</section>
 <h2>Contattaci</h2>
 
 <p>Per informazioni sugli annunci presenti su CasaClick puoi contattarci tramite email oppure tramite i nostri social.</p>

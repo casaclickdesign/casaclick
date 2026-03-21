@@ -117,59 +117,34 @@ padding:6px;
 border-radius:50%;
 display:inline-flex;
 }
+ /* WHATSAPP UGUALE ALLE ALTRE ICONE */
+.whatsapp-float{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:white;
+  padding:6px;
+  border-radius:50%;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 4px 10px rgba(0,0,0,0.18);
+  z-index:999;
+  transition:transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.whatsapp-float img{
+  width:24px;
+  height:24px;
+  display:block;
+}
+
+.whatsapp-float:hover{
+  transform:translateY(-4px) scale(1.08);
+  box-shadow:0 10px 18px rgba(0,0,0,0.28);
+}
   /* RIDUZIONE WHATSAPP */
-.whatsapp-float img{
-width:24px;
-height:24px;
-}
 
-.whatsapp-float{
-position:fixed;
-bottom:20px;
-right:20px;
-background:white;
-padding:6px;
-border-radius:50%;
-display:inline-flex;
-align-items:center;
-justify-content:center;
-box-shadow:0 4px 10px rgba(0,0,0,0.18);
-z-index:999;
-transition:transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.whatsapp-float img{
-width:24px;
-height:24px;
-display:block;
-}
-
-.whatsapp-float:hover{
-transform:translateY(-4px) scale(1.08);
-box-shadow:0 10px 18px rgba(0,0,0,0.28);
-}
-
-.whatsapp-float img{
-width:24px;
-height:24px;
-display:block;
-}
-
-.whatsapp-float:hover{
-transform:translateY(-4px) scale(1.08);
-box-shadow:0 10px 18px rgba(0,0,0,0.28);
-}
-  /* EFFETTO HOVER SOCIAL */
-.social-icon img{
-transition: transform 0.2s;
-}
-
-.social-icon img:hover{
-transform: scale(1.2);
-}
-
-/* EFFETTO HOVER WHATSAPP */
-.whatsapp-float{
 transition: transform 0.2s;
 }
 
@@ -194,13 +169,7 @@ transform: scale(1.1);
 
 </div>
 
-<nav>
-<a href="#">Home</a>
-<a href="#">Compra</a>
-<a href="#">Affitta</a>
-<a href="#">Vendi</a>
-<a href="#">Immobili</a>
-<a href="#">Mappa</a>
+
 <a href="#">Preferiti</a>
 </nav>
 
@@ -305,10 +274,10 @@ document.getElementById("cookie-banner").style.display="none";
     </a>
   </div>
 </section>
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="55">
+<a href="https://wa.me/" class="whatsapp-float" target="_blank">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
 </a>
-
 </body>
 </html>
   
-</html>
+

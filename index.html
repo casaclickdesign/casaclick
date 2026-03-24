@@ -667,6 +667,162 @@ transform: scale(1.1);
 .annunci-wrapper{
   margin:15px auto 8px;
 }
+ .annunci-wrapper{
+  width:min(1180px, calc(100% - 40px));
+  margin:18px auto 8px;
+  padding:0;
+  color:#ffffff;
+}
+
+.annunci-header{
+  text-align:center;
+  margin-bottom:14px;
+}
+
+.annunci-header h2{
+  margin:0 0 6px 0;
+  font-size:34px;
+  color:#ffffff;
+}
+
+.annunci-header p{
+  margin:0;
+  font-size:16px;
+  color:#f2f2f2;
+}
+
+.annunci-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(260px, 1fr));
+  gap:18px;
+  align-items:stretch;
+}
+
+.annuncio-card{
+  background:#ffffff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 10px 24px rgba(0,0,0,0.18);
+  display:flex;
+  flex-direction:column;
+}
+
+.annuncio-immagine{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
+}
+
+.annuncio-content{
+  padding:14px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  color:#1f2937;
+}
+
+.annuncio-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:10px;
+}
+
+.annuncio-titolo{
+  margin:0;
+  font-size:18px;
+  line-height:1.2;
+  color:#24486b;
+}
+
+.annuncio-prezzo{
+  font-size:18px;
+  font-weight:700;
+  color:#0f172a;
+  white-space:nowrap;
+}
+
+.annuncio-tagline{
+  font-size:13px;
+  font-weight:700;
+  color:#b45309;
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+}
+
+.annuncio-descrizione{
+  margin:0;
+  font-size:14px;
+  line-height:1.45;
+  color:#374151;
+}
+
+.annuncio-ubicazione{
+  margin-top:auto;
+  padding-top:6px;
+  font-size:14px;
+  font-weight:700;
+  color:#6b7280;
+}
+
+.cta-btn{
+  display:inline-block;
+  margin-top:8px;
+  text-decoration:none;
+  background:#2f5d8a;
+  color:#ffffff;
+  padding:10px 14px;
+  border-radius:12px;
+  font-weight:700;
+  text-align:center;
+}
+
+.cta-btn:hover{
+  background:#24486b;
+}
+
+#contatti{
+  width:min(1180px, calc(100% - 40px));
+  margin:4px auto 8px;
+  padding:0;
+  text-align:center;
+}
+
+#contatti h2,
+#contatti p{
+  display:none;
+}
+
+#contatti h3{
+  margin:4px 0 8px 0;
+  font-size:18px;
+}
+
+.social-links{
+  justify-content:center;
+  margin-top:4px;
+}
+
+@media (max-width:1000px){
+  .annunci-grid{
+    grid-template-columns:repeat(2, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width:700px){
+  .annunci-wrapper{
+    width:calc(100% - 20px);
+  }
+
+  .annunci-grid{
+    grid-template-columns:1fr;
+  }
+
+  .annuncio-immagine{
+    height:220px;
+  }
+}
 </style>
 </head>
 

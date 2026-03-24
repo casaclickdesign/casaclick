@@ -701,56 +701,57 @@ document.getElementById("cookie-banner").style.display="none";
 }
 }
 <script>
-const immobili = [
-  {
-    titolo: "Appartamento panoramico con terrazzo",
-    prezzo: "€ 289.000",
-    ubicazione: "Vomero, Napoli",
-    tagline: "Vista da sogno",
-    descrizione: "Un appartamento elegante e luminoso, con terrazzo vivibile e ambienti pensati per offrire comfort, stile e un impatto immediato su chi lo visita.",
-    immagine: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80",
-    link: "#"
-  },
-  {
-    titolo: "Trilocale moderno e accogliente",
-    prezzo: "€ 215.000",
-    ubicazione: "Arenella, Napoli",
-    tagline: "Pronto da vivere",
-    descrizione: "Soluzione curata nei dettagli, perfetta per chi desidera entrare subito in una casa moderna, funzionale e capace di emozionare fin dal primo sguardo.",
-    immagine: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
-    link: "#"
-  },
-  {
-    titolo: "Bilocale di charme per investimento",
-    prezzo: "€ 169.000",
-    ubicazione: "Centro Storico, Napoli",
-    tagline: "Investimento ideale",
-    descrizione: "Una proposta intelligente e di forte attrattiva, perfetta per chi cerca un immobile con carattere, posizione interessante e grande appeal commerciale.",
-    immagine: "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80",
-    link: "#"
-  }
-];
+document.addEventListener("DOMContentLoaded", () => {
+  const immobili = [
+    {
+      titolo: "Appartamento panoramico con terrazzo",
+      prezzo: "€ 289.000",
+      ubicazione: "Vomero, Napoli",
+      tagline: "Vista da sogno",
+      descrizione: "Un appartamento elegante e luminoso, con terrazzo vivibile e ambienti studiati per offrire comfort e stile.",
+      immagine: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80",
+      link: "#"
+    },
+    {
+      titolo: "Trilocale moderno e accogliente",
+      prezzo: "€ 215.000",
+      ubicazione: "Arenella, Napoli",
+      tagline: "Pronto da vivere",
+      descrizione: "Soluzione curata nei dettagli, perfetta per chi desidera una casa moderna e funzionale fin dal primo sguardo.",
+      immagine: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
+      link: "#"
+    },
+    {
+      titolo: "Bilocale di charme per investimento",
+      prezzo: "€ 169.000",
+      ubicazione: "Centro Storico, Napoli",
+      tagline: "Investimento ideale",
+      descrizione: "Una proposta di forte attrattiva, perfetta per chi cerca carattere, posizione interessante e ottimo potenziale.",
+      immagine: "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80",
+      link: "#"
+    }
+  ];
 
-const annunciGrid = document.getElementById("annunciGrid");
+  const annunciGrid = document.getElementById("annunciGrid");
 
-if (annunciGrid) {
-  annunciGrid.innerHTML = immobili.map(immobile => `
-    <article class="annuncio-card">
-      <img class="annuncio-immagine" src="${immobile.immagine}" alt="${immobile.titolo}">
-      <div class="annuncio-content">
-        <div class="annuncio-top">
-          <h3 class="annuncio-titolo">${immobile.titolo}</h3>
-          <div class="annuncio-prezzo">${immobile.prezzo}</div>
+  if (annunciGrid) {
+    annunciGrid.innerHTML = immobili.map(immobile => `
+      <article class="annuncio-card">
+        <img class="annuncio-immagine" src="${immobile.immagine}" alt="${immobile.titolo}">
+        <div class="annuncio-content">
+          <div class="annuncio-top">
+            <h3 class="annuncio-titolo">${immobile.titolo}</h3>
+            <div class="annuncio-prezzo">${immobile.prezzo}</div>
+          </div>
+          <div class="annuncio-tagline">${immobile.tagline}</div>
+          <p class="annuncio-descrizione">${immobile.descrizione}</p>
+          <div class="annuncio-ubicazione">📍 ${immobile.ubicazione}</div>
+          <a href="${immobile.link}" class="cta-btn">Guarda altre foto</a>
         </div>
-        <div class="annuncio-tagline">${immobile.tagline}</div>
-        <p class="annuncio-descrizione">${immobile.descrizione}</p>
-        <div class="annuncio-ubicazione">📍 ${immobile.ubicazione}</div>
-        <a href="${immobile.link}" class="cta-btn">Guarda altre foto</a>
-      </div>
-    </article>
-  `).join("");
-}
- });
+      </article>
+    `).join("");
+  }
+});
 </script>
 
 <section class="annunci-wrapper" id="annunci-disponibili">

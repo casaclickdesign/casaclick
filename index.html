@@ -823,6 +823,175 @@ transform: scale(1.1);
     height:220px;
   }
 }
+ /* CORREZIONE FINALE SEZIONE IMMOBILI + BLOCCO SOTTO */
+.annunci-wrapper{
+  width:100%;
+  margin:0;
+  padding:14px 0 4px;
+  background:#ffffff;
+  color:#24486b;
+}
+
+.annunci-header{
+  width:min(1180px, calc(100% - 40px));
+  margin:0 auto 12px;
+  text-align:center;
+}
+
+.annunci-header h2{
+  margin:0 0 4px 0;
+  font-size:34px;
+  color:#24486b;
+}
+
+.annunci-header p{
+  margin:0;
+  font-size:16px;
+  color:#6b7280;
+}
+
+.annunci-grid{
+  width:min(1180px, calc(100% - 40px));
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(3, minmax(260px, 1fr));
+  gap:18px;
+  align-items:stretch;
+}
+
+.annuncio-card{
+  background:#ffffff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 10px 24px rgba(0,0,0,0.18);
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+
+.annuncio-immagine{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
+}
+
+.annuncio-content{
+  padding:14px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  color:#1f2937;
+  flex:1;
+}
+
+.annuncio-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:10px;
+}
+
+.annuncio-titolo{
+  margin:0;
+  font-size:18px;
+  line-height:1.2;
+  color:#24486b;
+}
+
+.annuncio-prezzo{
+  font-size:18px;
+  font-weight:700;
+  color:#0f172a;
+  white-space:nowrap;
+}
+
+.annuncio-tagline{
+  font-size:13px;
+  font-weight:700;
+  color:#b45309;
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+}
+
+.annuncio-descrizione{
+  margin:0;
+  font-size:14px;
+  line-height:1.45;
+  color:#374151;
+}
+
+.annuncio-ubicazione{
+  margin:0 0 8px 0;
+  font-size:14px;
+  font-weight:700;
+  color:#6b7280;
+}
+
+.cta-btn{
+  display:block;
+  margin-top:auto;
+  text-decoration:none;
+  background:#2f5d8a;
+  color:#ffffff;
+  padding:10px 14px;
+  border-radius:12px;
+  font-weight:700;
+  text-align:center;
+}
+
+.cta-btn:hover{
+  background:#24486b;
+}
+
+#contatti{
+  width:min(1180px, calc(100% - 40px));
+  margin:4px auto 6px;
+  padding:0;
+  text-align:center;
+}
+
+#contatti h2,
+#contatti p{
+  display:none;
+}
+
+#contatti h3{
+  margin:0 0 4px 0;
+  font-size:18px;
+}
+
+.social-links{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-top:2px;
+}
+
+@media (max-width:1000px){
+  .annunci-grid{
+    grid-template-columns:repeat(2, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width:700px){
+  .annunci-wrapper{
+    padding:12px 0 4px;
+  }
+
+  .annunci-grid{
+    width:calc(100% - 20px);
+    grid-template-columns:1fr;
+  }
+
+  .annuncio-immagine{
+    height:220px;
+  }
+
+  #contatti{
+    width:calc(100% - 20px);
+  }
+}
 </style>
 </head>
 

@@ -60,7 +60,7 @@ async function refreshSessionUI() {
 }
 
 loginForm.addEventListener("submit", async (e) => {
- loginForm.addEventListener("submit", async (e) => {
+loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   loginMsg.textContent = "";
 
@@ -79,6 +79,8 @@ loginForm.addEventListener("submit", async (e) => {
     return;
   }
 
+  loginMsg.textContent = "Controlla la tua email e clicca il link di accesso.";
+});
   loginMsg.textContent = "Controlla la tua email e clicca il link di accesso.";
 });
 

@@ -146,11 +146,13 @@ immobileForm.addEventListener("submit", async (e) => {
     formMsg.textContent = "Errore durante il salvataggio dell’immobile.";
     return;
   }
+formMsg.textContent = "Immobile pubblicato con successo.";
+immobileForm.reset();
+previewImage.src = "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80";
+updatePreview();
+});
 
-  formMsg.textContent = "Immobile pubblicato con successo.";
-  immobileForm.reset();
-  previewImage.src = "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80";
- client.auth.onAuthStateChange(() => {
+client.auth.onAuthStateChange(() => {
   refreshSessionUI();
 });
 

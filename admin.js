@@ -60,24 +60,26 @@ async function refreshSessionUI() {
 }
 
 loginForm.addEventListener("submit", async (e) => {
+ loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   loginMsg.textContent = "";
 
   const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value.trim();
 
-  const { error } = await client.auth.signInWithPassword({
+  const { error } = await client.auth.signInWithOtp({
     email,
-    password
+    options: {
+      shouldCreateUser: false,
+      emailRedirectTo: "https://casaclickdesign.github.io/casaclick/admin.html"
+    }
   });
 
   if (error) {
-    loginMsg.textContent = "Login non riuscito. Controlla email e password.";
+    loginMsg.textContent = "Invio link non riuscito. Controlla l'email.";
     return;
   }
 
-  loginMsg.textContent = "Login effettuato con successo.";
-  refreshSessionUI();
+  loginMsg.textContent = "Controlla la tua email e clicca il link di accesso.";
 });
 
 logoutBtn.addEventListener("click", async () => {
@@ -148,7 +150,8 @@ immobileForm.addEventListener("submit", async (e) => {
   formMsg.textContent = "Immobile pubblicato con successo.";
   immobileForm.reset();
   previewImage.src = "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80";
-  updatePreview();
+ client.auth.onAuthStateChange(() => {
+  refreshSessionUI();
 });
 
 updatePreview();

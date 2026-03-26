@@ -65,19 +65,21 @@ loginForm.addEventListener("submit", async (e) => {
   loginMsg.textContent = "";
 
   const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
 
-  const { error } = await client.auth.signInWithOtp({
+  const { error } = await client.auth.signInWithPassword({
     email,
-    options: {
-      shouldCreateUser: false,
-      emailRedirectTo: "https://casaclickdesign.github.io/casaclick/admin.html"
-    }
+    password
   });
 
   if (error) {
-    loginMsg.textContent = "Invio link non riuscito. Controlla l'email.";
+    loginMsg.textContent = "Login non riuscito. Controlla email e password.";
     return;
   }
+
+  loginMsg.textContent = "Login effettuato con successo.";
+  refreshSessionUI();
+});
 
   loginMsg.textContent = "Controlla la tua email e clicca il link di accesso.";
 });

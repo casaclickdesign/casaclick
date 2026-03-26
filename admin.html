@@ -223,7 +223,7 @@
   <input type="password" id="password" placeholder="Inserisci password" required>
 </div>
 
-<div class="row">
+<button type="button" id="loginBtn">Accedi</button>
   <button type="submit">Accedi</button>
   <button type="button" class="secondary" id="logoutBtn">Esci</button>
 </div>
@@ -323,5 +323,46 @@
   </div>
 
   <script src="admin.js"></script>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const loginBtn = document.getElementById("loginBtn");
+  const loginMsg = document.getElementById("loginMsg");
+  const authStatus = document.getElementById("authStatus");
+
+  if (!loginBtn) return;
+
+  loginBtn.addEventListener("click", async function () {
+    loginMsg.textContent = "";
+
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    if (!email || !password) {
+      loginMsg.textContent = "Inserisci email e password.";
+      return;
+    }
+
+    try {
+      const tempClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+      const { error } = await tempClient.auth.signInWithPassword({
+        email,
+        password
+      });
+
+      if (error) {
+        loginMsg.textContent = "Login non riuscito. Controlla email e password.";
+        return;
+      }
+
+      authStatus.textContent = "Autenticata";
+      loginMsg.textContent = "Login effettuato con successo.";
+    } catch (err) {
+      loginMsg.textContent = "Errore durante il login.";
+      console.error(err);
+    }
+  });
+});
+</script>
 </body>
 </html>

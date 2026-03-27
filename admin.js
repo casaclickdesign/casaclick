@@ -221,9 +221,8 @@ if (immobileForm) {
   });
 }
 
-client.auth.onAuthStateChange(() => {
-  refreshSessionUI();
+client.auth.onAuthStateChange((_event, session) => {
+  setAuthLabel(!!session);
 });
-
 updatePreview();
 refreshSessionUI();

@@ -59,9 +59,9 @@ async function refreshSessionUI() {
   }
 }
 
-loginForm.addEventListener("submit", async (e) => {
-loginForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
+const loginBtn = document.getElementById("loginBtn");
+
+loginBtn.addEventListener("click", async () => {
   loginMsg.textContent = "";
 
   const email = document.getElementById("email").value.trim();
@@ -73,17 +73,13 @@ loginForm.addEventListener("submit", async (e) => {
   });
 
   if (error) {
-    loginMsg.textContent = "Login non riuscito. Controlla email e password.";
+    loginMsg.textContent = error.message;
+    console.error(error);
     return;
   }
 
   loginMsg.textContent = "Login effettuato con successo.";
   refreshSessionUI();
-});
-
-  loginMsg.textContent = "Controlla la tua email e clicca il link di accesso.";
-});
-  loginMsg.textContent = "Controlla la tua email e clicca il link di accesso.";
 });
 
 logoutBtn.addEventListener("click", async () => {

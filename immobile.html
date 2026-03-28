@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>CasaClick</title>
+  <title>Dettaglio immobile | CasaClick</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabase-config.js"></script>
@@ -33,27 +33,7 @@
 </header>
 
 <main class="page-shell">
-  <section class="hero">
-    <h2>Trova la tua casa ideale</h2>
-    <p>Gli immobili pubblicati dal pannello admin compaiono qui automaticamente. I pulsanti della hero e del menu aprono pagine reali, non link finti.</p>
-    <div class="hero-actions">
-      <a class="btn" href="immobili.html?categoria=vendita">Compra</a>
-      <a class="btn-outline" href="immobili.html?categoria=affitto">Affitta</a>
-      <a class="btn-outline" href="immobili.html">Tutti gli immobili</a>
-      <a class="btn-outline" href="preferiti.html">Preferiti</a>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="section-head">
-      <div>
-        <h2>Immobili in evidenza</h2>
-        <p>La home mostra gli immobili pubblicati in Supabase, non più le 3 card demo statiche.</p>
-      </div>
-      <a class="btn" href="immobili.html">Vedi tutti</a>
-    </div>
-    <div id="featuredGrid" class="cards-grid"></div>
-  </section>
+  <div id="detailPage"></div>
 </main>
 
 <footer class="site-footer">

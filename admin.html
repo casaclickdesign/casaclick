@@ -2,246 +2,64 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Admin CasaClick</title>
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabase-config.js"></script>
-  <style>
-    body{
-      margin:0;
-      font-family:Arial, Helvetica, sans-serif;
-      background:#2c5a82;
-      color:#1f2937;
-    }
-
-    .admin-page{
-      width:min(1200px, calc(100% - 30px));
-      margin:30px auto;
-      display:grid;
-      grid-template-columns:1.1fr 0.9fr;
-      gap:24px;
-      align-items:start;
-    }
-
-    .panel{
-      background:#ffffff;
-      border-radius:18px;
-      padding:22px;
-      box-shadow:0 10px 24px rgba(0,0,0,0.18);
-    }
-
-    h1,h2{
-      margin-top:0;
-      color:#24486b;
-    }
-
-    .row{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-    }
-
-    .field{
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-      margin-bottom:12px;
-    }
-
-    label{
-      font-weight:700;
-      color:#24486b;
-    }
-
-    input, select, textarea, button{
-      font:inherit;
-      padding:12px 14px;
-      border-radius:12px;
-      border:1px solid #cbd5e1;
-      box-sizing:border-box;
-    }
-
-    textarea{
-      min-height:120px;
-      resize:vertical;
-    }
-
-    button{
-      background:#2f5d8a;
-      color:#fff;
-      border:none;
-      font-weight:700;
-      cursor:pointer;
-    }
-
-    button:hover{
-      background:#24486b;
-    }
-
-    .secondary{
-      background:#e5e7eb;
-      color:#111827;
-    }
-
-    .msg{
-      margin-top:10px;
-      font-weight:700;
-      color:#24486b;
-    }
-
-    .preview-title{
-      margin-bottom:14px;
-    }
-
-    .annuncio-card{
-      background:#ffffff;
-      border-radius:18px;
-      overflow:hidden;
-      box-shadow:0 10px 24px rgba(0,0,0,0.18);
-      display:flex;
-      flex-direction:column;
-    }
-
-    .annuncio-immagine{
-      width:100%;
-      height:240px;
-      object-fit:cover;
-      display:block;
-      background:#dbe4ef;
-    }
-
-    .annuncio-content{
-      padding:16px;
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-      color:#1f2937;
-    }
-
-    .annuncio-top{
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      align-items:flex-start;
-    }
-
-    .annuncio-titolo{
-      margin:0;
-      font-size:20px;
-      line-height:1.2;
-      color:#24486b;
-    }
-
-    .annuncio-prezzo{
-      white-space:nowrap;
-      font-size:20px;
-      font-weight:700;
-      color:#0f172a;
-    }
-
-    .annuncio-tagline{
-      font-size:14px;
-      font-weight:700;
-      color:#b45309;
-      text-transform:uppercase;
-      letter-spacing:0.04em;
-    }
-
-    .annuncio-descrizione{
-      margin:0;
-      font-size:15px;
-      line-height:1.5;
-      color:#374151;
-    }
-
-    .annuncio-ubicazione{
-      margin:0;
-      font-size:15px;
-      font-weight:700;
-      color:#6b7280;
-    }
-
-    .cta-btn{
-      display:block;
-      margin-top:8px;
-      text-decoration:none;
-      background:#2f5d8a;
-      color:#ffffff;
-      padding:10px 14px;
-      border-radius:12px;
-      font-weight:700;
-      text-align:center;
-    }
-
-    .status-bar{
-      display:flex;
-      gap:10px;
-      align-items:center;
-      flex-wrap:wrap;
-      margin-bottom:12px;
-    }
-
-    .badge{
-      display:inline-block;
-      padding:6px 10px;
-      border-radius:999px;
-      background:#e5e7eb;
-      font-size:13px;
-      font-weight:700;
-    }
-
-    @media (max-width:900px){
-      .admin-page{
-        grid-template-columns:1fr;
-      }
-
-      .row{
-        grid-template-columns:1fr;
-      }
-    }
-  </style>
+  <script defer src="admin.js"></script>
 </head>
 <body>
-  <div class="admin-page">
-    <div class="panel">
-      <h1>Admin CasaClick</h1>
-
-      <div class="status-bar">
-        <span class="badge" id="authStatus">Non autenticata</span>
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo-row">
+      <img src="logo.png" alt="CasaClick">
+      <div class="brand">
+        <h1>Admin CasaClick</h1>
+        <p>Pannello inserimento immobili</p>
       </div>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Vai al sito</a>
+      <a href="immobili.html">Lista immobili</a>
+      <a href="preferiti.html">Preferiti</a>
+    </nav>
+  </div>
+</header>
 
-     <form id="loginForm" onsubmit="return false;">
-        <h2>Accesso admin</h2>
-
+<main class="page-shell">
+  <div class="admin-layout">
+    <section class="panel">
+      <div class="badge" id="authStatus">Non autenticata</div>
+      <h2 style="margin-top:16px;">Accesso admin</h2>
+      <form id="loginForm" onsubmit="return false;">
         <div class="field">
           <label for="email">Email admin</label>
           <input type="email" id="email" placeholder="casaclick@outlook.it" required>
         </div>
-
         <div class="field">
           <label for="password">Password</label>
           <input type="password" id="password" placeholder="Inserisci password" required>
         </div>
-
-        <div class="row">
-         <button type="button" id="loginBtn">Accedi</button>
-          <button type="button" class="secondary" id="logoutBtn">Esci</button>
+        <div class="form-actions">
+          <button class="btn" type="button" id="loginBtn">Accedi</button>
+          <button class="ghost-btn" type="button" id="logoutBtn">Esci</button>
         </div>
-
-        <div class="msg" id="loginMsg"></div>
+        <div class="message" id="loginMsg"></div>
       </form>
 
-      <hr style="margin:22px 0; border:none; border-top:1px solid #e5e7eb;">
+      <hr style="margin:22px 0;border:none;border-top:1px solid #e5edf5;">
+
+      <h2>Nuovo immobile</h2>
+      <p class="small">Qui compili i dati una sola volta e puoi caricare più foto dello stesso immobile insieme.</p>
 
       <form id="immobileForm">
-        <h2>Nuovo immobile</h2>
+        <div class="form-grid">
+          <div class="field full">
+            <label for="titolo">Titolo immobile</label>
+            <input type="text" id="titolo" placeholder="Es. Appartamento panoramico" required>
+          </div>
 
-        <div class="field">
-          <label for="titolo">Titolo immobile</label>
-          <input type="text" id="titolo" placeholder="Es. Appartamento panoramico" required>
-        </div>
-
-        <div class="row">
           <div class="field">
             <label for="prezzo">Prezzo</label>
             <input type="text" id="prezzo" placeholder="Es. € 289.000" required>
@@ -251,9 +69,7 @@
             <label for="ubicazione">Ubicazione</label>
             <input type="text" id="ubicazione" placeholder="Es. Vomero, Napoli" required>
           </div>
-        </div>
 
-        <div class="row">
           <div class="field">
             <label for="categoria">Categoria</label>
             <select id="categoria" required>
@@ -267,65 +83,50 @@
             <label for="tagline">Parola ad effetto</label>
             <input type="text" id="tagline" placeholder="Es. Vista da sogno">
           </div>
-        </div>
 
-        <div class="field">
-          <label for="descrizione">Descrizione</label>
-          <textarea id="descrizione" placeholder="Descrizione completa dell'immobile" required></textarea>
-        </div>
+          <div class="field full">
+            <label for="descrizione">Descrizione</label>
+            <textarea id="descrizione" placeholder="Descrizione completa dell’immobile" required></textarea>
+          </div>
 
-        <div class="row">
+          <div class="field full">
+            <label for="immagini">Foto immobile</label>
+            <input type="file" id="immagini" accept="image/*" multiple required>
+            <div class="small">Puoi selezionare più foto insieme. La prima diventa copertina.</div>
+          </div>
+
           <div class="field">
-            <label for="immagine">Foto principale</label>
-            <input type="file" id="immagine" accept="image/*" required>
-          </div>
-
-          <div class="field" style="justify-content:end;">
-            <label>
-              <input type="checkbox" id="inEvidenza">
-              Metti in evidenza
-            </label>
+            <label><input type="checkbox" id="inEvidenza"> Metti in evidenza</label>
           </div>
         </div>
 
-        <div class="row">
-          <button type="submit">Pubblica immobile</button>
-          <button type="button" class="secondary" id="resetBtn">Reset</button>
+        <div class="form-actions" style="margin-top:14px;">
+          <button class="btn" type="submit">Pubblica immobile</button>
+          <button class="ghost-btn" type="button" id="resetBtn">Reset</button>
         </div>
-
-        <div class="msg" id="formMsg"></div>
+        <div class="message" id="formMsg"></div>
       </form>
-    </div>
+    </section>
 
-    <div class="panel">
-      <h2 class="preview-title">Anteprima inserzione</h2>
-
-      <article class="annuncio-card">
-        <img
-          class="annuncio-immagine"
-          id="previewImage"
-          src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80"
-          alt="Anteprima immobile"
-        >
-
-        <div class="annuncio-content">
-          <div class="annuncio-top">
-            <h3 class="annuncio-titolo" id="previewTitolo">Titolo immobile</h3>
-            <div class="annuncio-prezzo" id="previewPrezzo">€ 0</div>
+    <section class="panel">
+      <h2>Anteprima inserzione</h2>
+      <div class="preview-gallery-count" id="previewCount">0 foto selezionate</div>
+      <article class="card property-card" style="margin-top:14px;">
+        <img id="previewImage" src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80" alt="Anteprima immobile" style="height:320px;object-fit:cover;">
+        <div class="property-body">
+          <div class="property-top">
+            <h3 class="property-title" id="previewTitolo">Titolo immobile</h3>
+            <div class="property-price" id="previewPrezzo">€ 0</div>
           </div>
-
-          <div class="annuncio-tagline" id="previewTagline">Parola ad effetto</div>
-          <p class="annuncio-descrizione" id="previewDescrizione">La descrizione dell’immobile comparirà qui in anteprima prima della pubblicazione.</p>
-          <p class="annuncio-ubicazione" id="previewUbicazione">📍 Ubicazione immobile</p>
-          <a href="#" class="cta-btn">Guarda altre foto</a>
+          <div class="property-tag" id="previewTagline">Parola ad effetto</div>
+          <p class="property-desc" id="previewDescrizione">La descrizione dell’immobile comparirà qui in anteprima prima della pubblicazione.</p>
+          <p class="property-location" id="previewUbicazione">📍 Ubicazione immobile</p>
+          <a href="#" class="btn">Guarda altre foto</a>
         </div>
       </article>
-    </div>
+      <div class="thumb-strip" id="thumbStrip" style="margin-top:14px;"></div>
+    </section>
   </div>
-
-  <script src="admin.js"></script>
+</main>
 </body>
 </html>
-
-
-       

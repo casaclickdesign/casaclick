@@ -1,4 +1,78 @@
-<section class="hero">
-  <h2>Trova la tua casa ideale</h2>
-  <p>Gli immobili pubblicati dal pannello admin compaiono qui automaticamente. I pulsanti della hero e del menu aprono pagine reali, non link finti.</p>
-</section>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>CasaClick</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script defer src="site.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo-row">
+      <img src="logo.png" alt="CasaClick">
+      <div class="brand">
+        <h1>CasaClick</h1>
+        <p>La tua casa in un click</p>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="index.html" data-page="index.html">Home</a>
+      <a href="immobili.html?categoria=vendita" data-page="immobili.html">Compra</a>
+      <a href="immobili.html?categoria=affitto" data-page="immobili.html">Affitta</a>
+      <a href="index.html#contatti" data-page="index.html">Vendi</a>
+      <a href="immobili.html" data-page="immobili.html">Immobili</a>
+      <a href="mappa.html" data-page="mappa.html">Mappa</a>
+      <a href="preferiti.html" data-page="preferiti.html">Preferiti</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page-shell">
+  <section class="hero">
+    <h2>Trova la tua casa ideale</h2>
+    <p>Gli immobili pubblicati dal pannello admin compaiono qui automaticamente. I pulsanti della hero e del menu aprono pagine reali, non link finti.</p>
+    <div class="hero-actions">
+      <a class="btn" href="immobili.html?categoria=vendita">Compra</a>
+      <a class="btn-outline" href="immobili.html?categoria=affitto">Affitta</a>
+      <a class="btn-outline" href="immobili.html">Tutti gli immobili</a>
+      <a class="btn-outline" href="preferiti.html">Preferiti</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <h2>Immobili in evidenza</h2>
+        <p>La home mostra gli immobili pubblicati in Supabase, non più le 3 card demo statiche.</p>
+      </div>
+      <a class="btn" href="immobili.html">Vedi tutti</a>
+    </div>
+    <div id="featuredGrid" class="cards-grid"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-box">
+    <section id="contatti" class="panel">
+      <h2 style="color:#24486b;margin-top:0;">Contattaci</h2>
+      <p>Per inserire nuovi immobili o chiedere informazioni sugli annunci, scrivici o contattaci sui social.</p>
+      <p><strong>Email:</strong> <a href="mailto:casaclick@outlook.it">casaclick@outlook.it</a></p>
+      <div class="social-links">
+        <a href="#" aria-label="Instagram"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" width="24" height="24"></a>
+        <a href="#" aria-label="Facebook"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" width="24" height="24"></a>
+        <a href="#" aria-label="TikTok"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" width="24" height="24"></a>
+      </div>
+    </section>
+  </div>
+</footer>
+<a href="https://wa.me/" class="whatsapp-float" target="_blank" rel="noopener">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+</a>
+
+</body>
+</html>

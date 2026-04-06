@@ -1,17 +1,1 @@
-[
-{
-"titolo":"Appartamento moderno",
-"citta":"Napoli",
-"mq":120,
-"prezzo":280000,
-"immagine":"https://images.unsplash.com/photo-1560518883-ce09059eeffa"
-},
 
-{
-"titolo":"Villa con giardino",
-"citta":"Milano",
-"mq":220,
-"prezzo":550000,
-"immagine":"https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
-}
-]
